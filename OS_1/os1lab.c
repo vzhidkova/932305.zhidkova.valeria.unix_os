@@ -32,7 +32,7 @@ void* provider(void* arg) {
 
     pthread_mutex_lock(&lock);
     running = 0;              
-    pthread_cond_broadcast(&cond1); 
+    pthread_cond_signal(&cond1); 
     pthread_mutex_unlock(&lock);
 
     return NULL;
@@ -80,4 +80,5 @@ int main() {
     pthread_cond_destroy(&cond1);
 
     return 0;
+
 }
